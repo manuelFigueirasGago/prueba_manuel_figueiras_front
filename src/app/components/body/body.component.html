@@ -1,0 +1,32 @@
+<div class="info">
+<b id="pelma">Introduce los siguientes número. Se trata de tres números enteros x, y, n a partir de los cuales se encontrará el entero máximo 'k' tal que 0<=k<=n (k mod x = y)</b>
+
+<br>
+
+<div fxLayout="row"  fxLayoutAlign="space-between center" [style]="{'margin-top': '10px'}">
+  <mat-form-field [style]="{'margin-right': '5px'}" class="example-full-width mr-2">
+    <mat-label>X</mat-label>
+    <input type="number" required [min]="0" matInput [(ngModel)]="x">
+    <mat-error>Campo obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [style]="{'margin-right': '5px'}" class="example-full-width">
+    <mat-label>Y</mat-label>
+    <input type="number" required [min]="0" matInput [(ngModel)]="y">
+    <mat-error>Campo obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>N</mat-label>
+    <input type="number" required [min]="0" matInput [(ngModel)]="n">
+    <mat-error>Campo obligatorio</mat-error>
+  </mat-form-field>
+</div>
+
+
+<button (click)="onSendGet()" [style]="{'margin-right': '5px'}" mat-stroked-button>Obtener resultado (GET)</button>
+<button (click)="onSendPost()" mat-stroked-button>Obtener resultado (POST)</button>
+  <div [style]="{'text-align': 'center', 'margin-top': '20px'}">
+    <p>Resultado: {{resultado || resultado === 0 ? resultado : '-'}}</p>
+  </div>
+</div>
